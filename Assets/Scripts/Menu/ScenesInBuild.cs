@@ -7,6 +7,8 @@ namespace UnityBase.CommonResources
     public enum ScenesInBuild
     {
         Main,
-        SolarSystemScene
+        SolarSystemScene,
+        PlatformerSceneMain,
+        PlatformerSceneNext
     }
 }

@@ -36,11 +36,18 @@ namespace UnityBase.CommonResources.CommonButtons
                 case "btnChoose":
                     manager.ChangeActiveLayout(activeLayout);
                     break;
+                case "btnExit":
+#if !UNITY_EDITOR
+                    Application.Quit();
+#else
+                    UnityEditor.EditorApplication.ExitPlaymode();
+#endif
+                    break;
                 case "btnFirst":
                     SceneManager.LoadScene(ScenesInBuild.SolarSystemScene.ToString());
                     break;
                 case "btnSecond":
-                    SceneManager.LoadScene(ScenesInBuild.Main.ToString());
+                    SceneManager.LoadScene(ScenesInBuild.PlatformerSceneMain.ToString());
                     break;
                 case "btnThird":
                     break;

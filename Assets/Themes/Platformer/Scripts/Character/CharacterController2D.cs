@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityBase.CommonResources;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Random = UnityEngine.Random;
 
-namespace Platformer.Character.Controller2D
+namespace UnityBase.Platformer.Character.Controller2D
 {
     public class CharacterController2D : MonoBehaviour
     {
@@ -237,13 +238,13 @@ namespace Platformer.Character.Controller2D
 
         internal void OnWinning()
         {
-            if (SceneManager.GetActiveScene().buildIndex >= SceneManager.sceneCountInBuildSettings - 1)
+            if(SceneManager.GetActiveScene().name.Equals(ScenesInBuild.PlatformerSceneMain.ToString()))
             {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+                SceneManager.LoadScene(ScenesInBuild.PlatformerSceneNext.ToString());
             }
             else
             {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+                SceneManager.LoadScene(ScenesInBuild.PlatformerSceneMain.ToString());
             }
         }
     }

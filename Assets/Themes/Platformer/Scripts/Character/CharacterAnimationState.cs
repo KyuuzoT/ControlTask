@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Platformer.Character.Controller2D
+namespace UnityBase.Platformer.Character.Controller2D
 {
     internal enum CharacterAnimationState
     {

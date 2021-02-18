@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-namespace Platformer.Character.Controller2D
+namespace UnityBase.Platformer.Character.Controller2D
 {
     public class WinAnimationCallback : StateMachineBehaviour
     {
