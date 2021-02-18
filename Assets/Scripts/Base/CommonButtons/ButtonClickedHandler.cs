@@ -50,9 +50,12 @@ namespace UnityBase.CommonResources.CommonButtons
                     SceneManager.LoadScene(ScenesInBuild.PlatformerSceneMain.ToString());
                     break;
                 case "btnThird":
+                    SceneManager.LoadScene(ScenesInBuild.Colors.ToString());
+                    break;
+                case "btnFourth":
                     break;
                 case "btnBack":
-                    SceneManager.LoadScene(ScenesInBuild.Main.ToString());
+                    SceneManager.LoadScene(ScenesInBuild.AngryBirds.ToString());
                     break;
                 default:
                     break;

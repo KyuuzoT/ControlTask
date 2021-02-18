@@ -9,6 +9,8 @@ namespace UnityBase.CommonResources
         Main,
         SolarSystemScene,
         PlatformerSceneMain,
-        PlatformerSceneNext
+        PlatformerSceneNext,
+        Colors,
+        AngryBirds
     }
 }
