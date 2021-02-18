@@ -7,6 +7,6 @@ namespace UnityBase.CommonResources
     public enum ScenesInBuild
     {
         Main,
-        Game
+        SolarSystemScene
     }
 }

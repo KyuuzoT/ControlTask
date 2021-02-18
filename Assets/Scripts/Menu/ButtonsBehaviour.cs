@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityBase.CommonResources.CommonButtons;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -13,10 +14,15 @@ namespace UnityBase.MenuScene.Menu
         private MenuManager manager;
         private Transform activeLayout;
 
+        private ButtonClickedHandler btnHandler;
+
         private void Awake()
         {
             buttonsOnScene = new List<Button>();
             manager = GetComponent<MenuManager>();
+
+            btnHandler = new ButtonClickedHandler();
+            btnHandler.Manager = manager;
         }
 
         // Update is called once per frame
@@ -29,7 +35,7 @@ namespace UnityBase.MenuScene.Menu
         private Transform GetCurrentActiveLayout()
         {
             Transform active = manager.currentLayout.transform;
-
+            btnHandler.ActiveLayout = active;
             return active;
         }
 
@@ -52,28 +58,8 @@ namespace UnityBase.MenuScene.Menu
                     .AddListener(
                                     delegate
                                     {
-                                        ButtonClicked(btn.name);
+                                        btnHandler.ButtonClicked(btn.name);
                                     });
-            }
-        }
-
-        private void ButtonClicked(string name)
-        {
-            switch (name)
-            {
-                case "btnChoose":
-                    manager.ChangeActiveLayout(activeLayout);
-                    break;
-                case "btnFirst":
-                    SceneManager.LoadScene(CommonResources.ScenesInBuild.Game.ToString());
-                    break;
-                case "btnSecond":
-                    SceneManager.LoadScene(CommonResources.ScenesInBuild.Main.ToString());
-                    break;
-                case "btnThird":
-                    break;
-                default:
-                    break;
             }
         }
     }
